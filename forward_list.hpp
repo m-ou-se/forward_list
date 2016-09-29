@@ -112,16 +112,11 @@ public:
 	}
 
 	bool empty() const {
-		return before_begin_.next == nullptr;
+		return begin() == end();
 	}
 
-	T const & front() const {
-		return before_begin_.next->value;
-	}
-
-	T & front() {
-		return before_begin_.next->value;
-	}
+	T       & front()       { return *begin(); }
+	T const & front() const { return *begin(); }
 
 	void clear() {
 		while (!empty()) pop_front();
