@@ -99,9 +99,9 @@ public:
 	const_iterator  before_begin() const { return const_iterator(&before_begin_); }
 	const_iterator cbefore_begin() const { return const_iterator(&before_begin_); }
 
-	iterator        begin()       {       iterator i = before_begin(); return ++i; }
-	const_iterator  begin() const { const_iterator i = before_begin(); return ++i; }
-	const_iterator cbegin() const { const_iterator i = before_begin(); return ++i; }
+	iterator        begin()       { return std::next(before_begin()); }
+	const_iterator  begin() const { return std::next(before_begin()); }
+	const_iterator cbegin() const { return std::next(before_begin()); }
 
 	iterator        end()       { return {}; }
 	const_iterator  end() const { return {}; }
