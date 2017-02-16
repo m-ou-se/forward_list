@@ -189,7 +189,7 @@ public:
 		while (size--) i = emplace_after(i);
 	}
 
-	void resize(size_t size, T const * value) {
+	void resize(size_t size, T const & value) {
 		auto i = before_begin();
 		while (size && std::next(i) != end()) { --size; ++i; }
 		erase_after(i, end());
